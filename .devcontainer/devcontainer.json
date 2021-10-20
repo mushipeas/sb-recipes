@@ -15,6 +15,7 @@
 		"vscjava.vscode-java-pack",
 		"pivotal.vscode-boot-dev-pack",
 		"sohibe.java-generate-setters-getters",
+		"ryanluker.vscode-coverage-gutters"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

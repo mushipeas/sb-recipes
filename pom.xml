@@ -14,7 +14,7 @@
 	<name>springboot-recipes</name>
 	<description>Spring Boot version of recipe site</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

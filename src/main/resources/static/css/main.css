@@ -1,0 +1,63 @@
+html {
+  background-color: #dadada;
+  place-content: center;
+}
+
+.s003 {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+.s003 .search-bar {
+  margin: 15px;
+}
+
+.search-bar form {
+  display: grid;
+  grid-template-columns: 1fr 56px;
+  grid-template-rows: 43px;
+  justify-items: stretch;
+  max-width: 800px;
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 3px 8px 20px 3px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar form:focus-within {
+  box-shadow: 6px 16px 40px 6px rgba(0, 0, 0, 0.15);  
+}
+
+.search-bar form .search-textbox {
+  border: 0;
+  outline: none;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-bar form .search-btn {
+  border: 0;
+  cursor: pointer;
+  background: #63c76a;
+  transition: all .2s ease-out, color .2s ease-out;
+}
+
+.search-bar form .search-btn svg {
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.search-bar form .search-btn:hover {
+  background: #46aa4d;
+}

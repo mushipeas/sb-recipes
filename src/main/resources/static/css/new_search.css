@@ -1,0 +1,354 @@
+@import "http://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
+
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+
+/* Document-specific content
+   ========================================================================== */
+/**
+ * Main.
+ */
+body {
+    background-color: #dadada;
+}
+
+.search-bar {
+  margin: 1rem;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 1rem;
+}
+
+.search-bar form {
+  display: grid;
+  grid-template-columns: 10fr auto;
+  justify-items: stretch;
+  max-width: 800px;
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 3px 8px 20px 3px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar form:focus-within {
+  box-shadow: 6px 16px 40px 6px rgba(0, 0, 0, 0.15);
+}
+
+.search-bar form .search-textbox {
+  border: 0;
+  outline: none;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-bar form .search-btn {
+  border: 0;
+  cursor: pointer;
+  background: #63c76a;
+  transition: all .2s ease-out, color .2s ease-out;
+}
+
+.search-bar form .search-btn svg {
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.search-bar form .search-btn:hover {
+  background: #46aa4d;
+}
+
+.overview {
+    margin: 1rem;
+    background-color: rgb(241, 241, 241);
+    border-width: 2px;
+    border-color: rgb(136, 136, 136);
+    border-radius: .5rem;
+}
+
+.result-header {
+   margin: 1rem;
+   padding-top: 1rem;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid-container {   
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+   grid-gap: 20px;
+   grid-auto-flow: row;
+   margin: 1rem;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: fit-content(600px) auto auto;
+  border: 1px solid #d3d3d3;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  align-items: start;
+}
+
+.bg-img {
+  background-size: cover;
+  background-position: center;
+  background-color: #ccc;
+  max-height: 100%;
+  max-width: 100%;
+  justify-self: center;
+}
+
+.content {
+  margin: 15px 15px 0 15px;
+  background-color: #ffffff;
+  align-self: start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-btn {  
+  margin: 0px 15px 15px 15px;
+  background-color: transparent;
+  border: 1px solid #2196F3;
+  padding: .5rem 1rem;  
+  cursor: pointer;
+  border-radius: .25rem;
+  justify-self: center;
+  align-self: end;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.page-btn {
+    display: block;
+    border: none;
+    background-color: #e6e6e6;
+    padding: 10px 16px;
+    margin: 0 10px 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.l-btn {
+    text-align: left;
+}
+
+.r-btn {
+    text-align: right;
+}

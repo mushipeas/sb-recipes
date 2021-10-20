@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="colorlib.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"/>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link th:href="@{/css/new_search.css}" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="search-bar">
+            <form action="/search" , method="GET">
+                <input class="search-textbox" id="search" type="text" name="terms" placeholder="Search.." onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Search..'"/> 
+                <button class="search-btn" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40"
+                        viewBox="-8 -8 40 40" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <div class="overview">
+            <div class="result-header">
+                <h1>Search Results</h1>
+                <h2 data-th-if="${#lists.isEmpty(results)}" class="lead">No results were found for "<strong class="text-danger"><span data-th-text="${terms}"> Search Terms </span></strong>"</h2>
+                <h2 data-th-unless="${#lists.isEmpty(results)}" class="lead"><strong class="text-danger"><span data-th-text="${results_count}"> Results Count </span></strong> results were found for "<strong
+                        class="text-danger"><span data-th-text="${terms}"> Search Terms </span></strong>"</h2>
+            </div>
+
+            <div class="grid-container">
+                <div data-th-each="result : ${results}" class="card" >
+                    <img class="bg-img" data-th-src="${result.img_url}" data-th-alt="${result.title}" />
+                    <div class="content">
+                        <h4><span data-th-text="${result.title}"> Title </span></h4>
+                        <p><span data-th-text="${result.desc}"> Description </span></p>
+                    </div>
+                    <a class="card-btn" data-th-href="@{${result.url}}">Recipe</a>
+                </div>
+            </div>
+            
+            <div class="btn-container">
+                <a data-th-if="${previousPage != null}" type="button" class="btn page-btn btn-outline-dark l-btn"
+                    data-th-onclick="|window.location.href='@{/search(terms=${terms},p=${previousPage})}'|">Previous Page
+                </a>
+                <div data-th-unless="${previousPage != null}" ></div>
+                <a data-th-if="${nextPage != null}" type="button" class="btn page-btn btn-outline-dark r-btn"
+                data-th-onclick="|window.location.href='@{/search(terms=${terms},p=${nextPage})}'|">Next Page
+                </a>
+                <div data-th-unless="${nextPage != null}" ></div>
+            </div>
+        </div>
+    </body>
+</html>

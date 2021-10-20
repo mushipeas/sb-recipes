@@ -1,0 +1,49 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        # Update the VARIANT arg to pick a Java version: 11, 16
+        VARIANT: "16"
+        # Options
+        INSTALL_MAVEN: "true"
+        INSTALL_GRADLE: "false"
+        NODE_VERSION: "lts/*"
+    environment:
+      # Set properties to application-local.properties
+      SPRING_PROFILES_ACTIVE: local
+      JDBC_DATABASE_URL: jdbc:postgresql://db:5432/postgres
+      JDBC_DATABASE_USERNAME: postgres
+      JDBC_DATABASE_PASSWORD: postgres
+    volumes:
+      - ..:/workspace:cached
+    # Override default command to prevent exit:
+    command: sleep infinity
+    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
+    network_mode: service:db
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+
+volumes:
+  pgdata:

@@ -1,4 +1,5 @@
 # Recipe Lookup Site (Spring Boot)
+![build](https://github.com/mushipeas/sb-recipes/actions/workflows/maven.yml/badge.svg)
 
 A Spring Boot application for finding recipes. Links to bbc-goodfood recipes.
 

@@ -8,12 +8,11 @@ Data has been pre-scraped with BS4 and requires pre-populating into the database
 
 ## Recommended Setup for Development:
 
-Open the project with vs-code and activate the dev-container.
-
-Tests currently make use of Mockito and MockMVC modules.
+Open the project with vs-code and activate the dev-container. (probably just use IntelliJ actually)
 
 ## TODO:
 
+- Update to Java 21
 - Update to SB3
 - Add tests for Thymeleaf templates
 - Add testContainers and sample data set for testing
